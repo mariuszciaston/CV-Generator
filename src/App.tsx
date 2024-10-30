@@ -10,7 +10,7 @@ import {
 function App() {
   return (
     <>
-      <main className="flex w-screen max-w-[1216px] flex-col flex-wrap content-center gap-8 p-8 lg:flex-row">
+      <main className="flex max-w-[1180px] flex-wrap items-center gap-8 p-8 lg:w-[calc(100vw-2rem)] lg:flex-row lg:items-start">
         <section
           id="input-section"
           className="flex w-full min-w-[256px] max-w-[768px] flex-col gap-4 lg:w-[320px]"
@@ -108,7 +108,10 @@ function App() {
           </button>
         </section>
 
-        <section id="preview-section" className="min-w-[256px] flex-1">
+        <section
+          id="preview-section"
+          className="min-w-[256px] max-w-[768px] flex-1 lg:max-w-none"
+        >
           <div
             id="page"
             className="aspect-[210/297] border bg-white shadow-lg"
