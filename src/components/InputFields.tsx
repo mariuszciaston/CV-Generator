@@ -1,3 +1,4 @@
+import Button from "./Button";
 import InputField from "./InputField";
 import Textarea from "./Textarea";
 import { CardTypes } from "./types";
@@ -95,6 +96,9 @@ const InputFields: React.FC<Pick<CardTypes, "isOpen" | "title">> = ({
             id="endDate"
             placeholder="Enter end date"
           />
+
+          <Button text="Remove" className="bg-red-500" />
+          <Button text="Add" className="bg-blue-500" />
         </>
       )}
       {title === "Education" && (
@@ -130,6 +134,9 @@ const InputFields: React.FC<Pick<CardTypes, "isOpen" | "title">> = ({
             id="endDate"
             placeholder="Enter end date"
           />
+
+          <Button text="Remove" className="bg-red-500" />
+          <Button text="Add" className="bg-blue-500" />
         </>
       )}
       {title === "Skills" && (
