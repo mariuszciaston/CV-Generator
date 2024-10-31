@@ -1,11 +1,6 @@
-interface InputFieldProps {
-  label: string;
-  type: string;
-  id: string;
-  placeholder: string;
-}
+import { InputFieldTypes } from "./types";
 
-const InputField: React.FC<InputFieldProps> = ({
+const InputField: React.FC<InputFieldTypes> = ({
   label,
   type,
   id,

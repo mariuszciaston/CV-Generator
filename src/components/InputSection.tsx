@@ -1,4 +1,5 @@
 import Cards from "./Cards";
+import Button from "./Button";
 
 const InputSection = () => {
   return (
@@ -7,29 +8,11 @@ const InputSection = () => {
       className="flex w-full min-w-[256px] max-w-[768px] flex-col gap-4 lg:w-[320px]"
     >
       <div id="loadClearBtns" className="flex flex-wrap gap-2">
-        <button
-          type="button"
-          className="flex-1 text-nowrap rounded-md bg-blue-400 p-2 text-sm font-medium text-white"
-        >
-          Load Example
-        </button>
-
-        <button
-          type="button"
-          className="flex-1 text-nowrap rounded-md bg-red-500 p-2 text-sm font-medium text-white"
-        >
-          Clear Resume
-        </button>
+        <Button text="Load Example" className="bg-blue-500" />
+        <Button text="Clear Resume" className="bg-red-500" />
       </div>
-
       <Cards />
-
-      <button
-        type="button"
-        className="w-full text-nowrap rounded-md bg-green-500 p-2 text-sm font-medium text-white"
-      >
-        Save as PDF
-      </button>
+      <Button text="Save as PDF" className="bg-green-500" />
     </section>
   );
 };
