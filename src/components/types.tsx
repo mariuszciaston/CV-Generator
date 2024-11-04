@@ -4,6 +4,11 @@ interface CardTypes {
   isOpen: boolean;
 }
 
+interface ChevronBtnTypes {
+  isOpen: boolean;
+  onToggle: () => void;
+}
+
 interface InputFieldTypes {
   label: string;
   type: string;
@@ -22,4 +27,10 @@ interface ButtonTypes {
   className: string;
 }
 
-export type { CardTypes, InputFieldTypes, TextareaTypes, ButtonTypes };
+export type {
+  CardTypes,
+  ChevronBtnTypes,
+  InputFieldTypes,
+  TextareaTypes,
+  ButtonTypes,
+};
