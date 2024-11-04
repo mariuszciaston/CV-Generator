@@ -2,6 +2,7 @@ interface CardTypes {
   title: string;
   Icon: React.ElementType;
   isOpen: boolean;
+  onToggle: (title: string) => void;
 }
 
 interface ChevronBtnTypes {
