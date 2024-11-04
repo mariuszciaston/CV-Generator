@@ -2,6 +2,7 @@ import Button from "./Button";
 import InputField from "./InputField";
 import Textarea from "./Textarea";
 import { CardTypes } from "./types";
+import cardDetails from "./cardDetails";
 
 const InputFields: React.FC<Pick<CardTypes, "isOpen" | "title">> = ({
   isOpen,
@@ -13,7 +14,7 @@ const InputFields: React.FC<Pick<CardTypes, "isOpen" | "title">> = ({
 
   return (
     <>
-      {title === "Personal Information" && (
+      {title === cardDetails[0].title && (
         <>
           <InputField
             label="Full Name"
@@ -54,11 +55,15 @@ const InputFields: React.FC<Pick<CardTypes, "isOpen" | "title">> = ({
         </>
       )}
 
-      {title === "Summary" && (
-        <Textarea name="summary" id="summary" placeholder="I am a..." />
+      {title === cardDetails[1].title && (
+        <Textarea
+          name={cardDetails[1].title.toLowerCase()}
+          id={cardDetails[1].title.toLowerCase()}
+          placeholder="I am a..."
+        />
       )}
 
-      {title === "Experience" && (
+      {title === cardDetails[2].title && (
         <>
           <InputField
             label="Position"
@@ -101,7 +106,7 @@ const InputFields: React.FC<Pick<CardTypes, "isOpen" | "title">> = ({
           <Button text="Add" className="bg-blue-500" />
         </>
       )}
-      {title === "Education" && (
+      {title === cardDetails[3].title && (
         <>
           <InputField
             label="School/University"
@@ -139,8 +144,12 @@ const InputFields: React.FC<Pick<CardTypes, "isOpen" | "title">> = ({
           <Button text="Add" className="bg-blue-500" />
         </>
       )}
-      {title === "Skills" && (
-        <Textarea name="skills" id="skills" placeholder="Enter your skills" />
+      {title === cardDetails[4].title && (
+        <Textarea
+          name={cardDetails[4].title.toLowerCase()}
+          id={cardDetails[4].title.toLowerCase()}
+          placeholder="Enter your skills"
+        />
       )}
     </>
   );
