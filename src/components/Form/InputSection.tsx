@@ -1,7 +1,11 @@
 import Cards from "./Cards";
 import Button from "./Button";
+import { InputSectionProps } from "../types";
 
-const InputSection = () => {
+const InputSection: React.FC<InputSectionProps> = ({
+  fullName,
+  onFullNameChange,
+}) => {
   return (
     <section
       id="input-section"
@@ -11,7 +15,7 @@ const InputSection = () => {
         <Button text="Load Example" className="bg-blue-500" />
         <Button text="Clear Resume" className="bg-red-500" />
       </div>
-      <Cards />
+      <Cards fullName={fullName} onFullNameChange={onFullNameChange} />
       <Button text="Save as PDF" className="bg-green-500" />
     </section>
   );

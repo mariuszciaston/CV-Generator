@@ -6,7 +6,9 @@ import {
   GraduationCap,
 } from "lucide-react";
 
-const cardDetails: { title: string; Icon: React.ElementType }[] = [
+import { cardDetailsProps } from "../types";
+
+const cardDetails: cardDetailsProps[] = [
   { title: "Personal Information", Icon: User },
   { title: "Summary", Icon: FilePen },
   { title: "Experience", Icon: Briefcase },

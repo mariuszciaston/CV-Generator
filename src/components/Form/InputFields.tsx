@@ -1,13 +1,12 @@
 import Button from "./Button";
 import InputField from "./InputField";
 import Textarea from "./Textarea";
-import { CardTypes } from "../types";
+import { CardProps } from "../types";
 import cardDetails from "./cardDetails";
 
-const InputFields: React.FC<Pick<CardTypes, "isOpen" | "title">> = ({
-  isOpen,
-  title,
-}) => {
+const InputFields: React.FC<
+  Pick<CardProps, "isOpen" | "title" | "fullName" | "onFullNameChange">
+> = ({ isOpen, title, fullName, onFullNameChange }) => {
   if (!isOpen) {
     return null;
   }
@@ -21,7 +20,10 @@ const InputFields: React.FC<Pick<CardTypes, "isOpen" | "title">> = ({
             type="text"
             id="fullName"
             placeholder="Enter your full name"
+            value={fullName}
+            onChange={onFullNameChange}
           />
+
           <InputField
             label="Job Title"
             type="text"

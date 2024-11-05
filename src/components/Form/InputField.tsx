@@ -1,10 +1,12 @@
-import { InputFieldTypes } from "../types";
+import { InputFieldProps } from "../types";
 
-const InputField: React.FC<InputFieldTypes> = ({
+const InputField: React.FC<InputFieldProps> = ({
   label,
   type,
   id,
   placeholder,
+  value,
+  onChange,
 }) => {
   return (
     <div className="flex flex-col gap-2">
@@ -17,6 +19,8 @@ const InputField: React.FC<InputFieldTypes> = ({
         name={id}
         className="rounded-md border px-3 py-2"
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
       />
     </div>
   );

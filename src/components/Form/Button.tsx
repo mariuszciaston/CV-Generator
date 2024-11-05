@@ -1,6 +1,6 @@
-import { ButtonTypes } from "../types";
+import { ButtonProps } from "../types";
 
-const Button: React.FC<ButtonTypes> = ({ text, className = "bg-gray-500" }) => {
+const Button: React.FC<ButtonProps> = ({ text, className = "bg-gray-500" }) => {
   return (
     <button
       type="button"

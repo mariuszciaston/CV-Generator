@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Card from "./Card";
 import cardDetails from "./cardDetails";
+import { CardProps } from "../types";
 
-const Cards = () => {
+const Cards: React.FC<CardProps> = ({ fullName, onFullNameChange }) => {
   const [openCard, setOpenCard] = useState<string | null>(cardDetails[0].title);
 
   const handleToggle = (title: string) => {
@@ -18,6 +19,8 @@ const Cards = () => {
           Icon={Icon}
           isOpen={openCard === title}
           onToggle={handleToggle}
+          fullName={fullName}
+          onFullNameChange={onFullNameChange}
         />
       ))}
     </div>

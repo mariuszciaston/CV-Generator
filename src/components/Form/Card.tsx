@@ -1,8 +1,15 @@
 import InputFields from "./InputFields";
 import ChevronBtn from "./ChevronBtn";
-import { CardTypes } from "../types";
+import { CardProps } from "../types";
 
-const Card: React.FC<CardTypes> = ({ title, Icon, isOpen, onToggle }) => {
+const Card: React.FC<CardProps> = ({
+  title,
+  Icon,
+  isOpen,
+  onToggle,
+  fullName,
+  onFullNameChange,
+}) => {
   return (
     <div className="flex flex-col gap-4 rounded-md border bg-white p-4 shadow">
       <div className="flex items-center justify-between text-xl font-medium">
@@ -12,7 +19,12 @@ const Card: React.FC<CardTypes> = ({ title, Icon, isOpen, onToggle }) => {
         </div>
         <ChevronBtn isOpen={isOpen} onToggle={() => onToggle(title)} />
       </div>
-      <InputFields isOpen={isOpen} title={title} />
+      <InputFields
+        isOpen={isOpen}
+        title={title}
+        fullName={fullName}
+        onFullNameChange={onFullNameChange}
+      />
     </div>
   );
 };
