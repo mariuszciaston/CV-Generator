@@ -1,6 +1,6 @@
 import InputFields from "./InputFields";
 import ChevronBtn from "./ChevronBtn";
-import { CardTypes } from "./types";
+import { CardTypes } from "../types";
 
 const Card: React.FC<CardTypes> = ({ title, Icon, isOpen, onToggle }) => {
   return (

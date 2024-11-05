@@ -1,5 +1,5 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { ChevronBtnTypes } from "./types";
+import { ChevronBtnTypes } from "../types";
 
 const ChevronBtn: React.FC<ChevronBtnTypes> = ({ isOpen, onToggle }) => {
   const Icon = isOpen ? ChevronUp : ChevronDown;

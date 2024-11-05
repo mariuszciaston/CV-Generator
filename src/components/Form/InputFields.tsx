@@ -1,7 +1,7 @@
 import Button from "./Button";
 import InputField from "./InputField";
 import Textarea from "./Textarea";
-import { CardTypes } from "./types";
+import { CardTypes } from "../types";
 import cardDetails from "./cardDetails";
 
 const InputFields: React.FC<Pick<CardTypes, "isOpen" | "title">> = ({

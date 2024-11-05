@@ -1,4 +1,4 @@
-import { TextareaTypes } from "./types";
+import { TextareaTypes } from "../types";
 
 const Textarea: React.FC<TextareaTypes> = ({ name, id, placeholder }) => {
   return (

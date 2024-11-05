@@ -1,4 +1,4 @@
-import { InputFieldTypes } from "./types";
+import { InputFieldTypes } from "../types";
 
 const InputField: React.FC<InputFieldTypes> = ({
   label,

@@ -3,9 +3,7 @@ import Card from "./Card";
 import cardDetails from "./cardDetails";
 
 const Cards = () => {
-  const [openCard, setOpenCard] = useState<string | null>(
-    "Personal Information",
-  );
+  const [openCard, setOpenCard] = useState<string | null>(cardDetails[0].title);
 
   const handleToggle = (title: string) => {
     setOpenCard((prev) => (prev === title ? null : title));

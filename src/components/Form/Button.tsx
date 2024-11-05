@@ -1,4 +1,4 @@
-import { ButtonTypes } from "./types";
+import { ButtonTypes } from "../types";
 
 const Button: React.FC<ButtonTypes> = ({ text, className = "bg-gray-500" }) => {
   return (
