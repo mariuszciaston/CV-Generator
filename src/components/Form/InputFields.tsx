@@ -1,12 +1,47 @@
-import Button from "./Button";
 import InputField from "./InputField";
 import Textarea from "./Textarea";
+import Button from "./Button";
 import { CardProps } from "../types";
 import cardDetails from "./cardDetails";
 
 const InputFields: React.FC<
-  Pick<CardProps, "isOpen" | "title" | "fullName" | "onFullNameChange">
-> = ({ isOpen, title, fullName, onFullNameChange }) => {
+  Pick<
+    CardProps,
+    | "isOpen"
+    | "title"
+    | "fullName"
+    | "jobTitle"
+    | "address"
+    | "email"
+    | "phoneNumber"
+    | "website"
+    | "summary"
+    | "onFullNameChange"
+    | "onJobTitleChange"
+    | "onAddressChange"
+    | "onEmailChange"
+    | "onPhoneNumberChange"
+    | "onWebsiteChange"
+    | "onSummaryChange"
+  >
+> = ({
+  isOpen,
+  title,
+  fullName,
+  jobTitle,
+  address,
+  email,
+  phoneNumber,
+  website,
+  summary,
+  onFullNameChange,
+  onJobTitleChange,
+  onAddressChange,
+  onEmailChange,
+  onPhoneNumberChange,
+  onWebsiteChange,
+  onSummaryChange
+}) => {
   if (!isOpen) {
     return null;
   }
@@ -29,30 +64,40 @@ const InputFields: React.FC<
             type="text"
             id="jobTitle"
             placeholder="Enter your job title"
+            value={jobTitle}
+            onChange={onJobTitleChange}
           />
           <InputField
             label="Address"
             type="text"
             id="address"
             placeholder="Enter your address"
+            value={address}
+            onChange={onAddressChange}
           />
           <InputField
             label="Email"
             type="email"
             id="email"
             placeholder="Enter your email"
+            value={email}
+            onChange={onEmailChange}
           />
           <InputField
             label="Phone Number"
             type="tel"
             id="phoneNumber"
             placeholder="Enter your phone number"
+            value={phoneNumber}
+            onChange={onPhoneNumberChange}
           />
           <InputField
             label="Website"
             type="url"
             id="website"
             placeholder="Enter your website URL"
+            value={website}
+            onChange={onWebsiteChange}
           />
         </>
       )}
@@ -62,6 +107,8 @@ const InputFields: React.FC<
           name={cardDetails[1].title.toLowerCase()}
           id={cardDetails[1].title.toLowerCase()}
           placeholder="I am a..."
+          value={summary}
+          onChange={onSummaryChange}
         />
       )}
 
@@ -146,13 +193,13 @@ const InputFields: React.FC<
           <Button text="Add" className="bg-blue-500" />
         </>
       )}
-      {title === cardDetails[4].title && (
+      {/* {title === cardDetails[4].title && (
         <Textarea
           name={cardDetails[4].title.toLowerCase()}
           id={cardDetails[4].title.toLowerCase()}
           placeholder="Enter your skills"
         />
-      )}
+      )} */}
     </>
   );
 };

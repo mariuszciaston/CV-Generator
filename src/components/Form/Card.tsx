@@ -7,8 +7,21 @@ const Card: React.FC<CardProps> = ({
   Icon,
   isOpen,
   onToggle,
+
   fullName,
   onFullNameChange,
+  jobTitle,
+  onJobTitleChange,
+  address,
+  onAddressChange,
+  email,
+  onEmailChange,
+  phoneNumber,
+  onPhoneNumberChange,
+  website,
+  onWebsiteChange,
+  summary,
+  onSummaryChange,
 }) => {
   return (
     <div className="flex flex-col gap-4 rounded-md border bg-white p-4 shadow">
@@ -24,6 +37,18 @@ const Card: React.FC<CardProps> = ({
         title={title}
         fullName={fullName}
         onFullNameChange={onFullNameChange}
+        jobTitle={jobTitle}
+        onJobTitleChange={onJobTitleChange}
+        address={address}
+        onAddressChange={onAddressChange}
+        email={email}
+        onEmailChange={onEmailChange}
+        phoneNumber={phoneNumber}
+        onPhoneNumberChange={onPhoneNumberChange}
+        website={website}
+        onWebsiteChange={onWebsiteChange}
+        summary={summary}
+        onSummaryChange={onSummaryChange}
       />
     </div>
   );

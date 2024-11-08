@@ -1,12 +1,20 @@
 import { TextareaProps } from "../types";
 
-const Textarea: React.FC<TextareaProps> = ({ name, id, placeholder }) => {
+const Textarea: React.FC<TextareaProps> = ({
+  name,
+  id,
+  placeholder,
+  value,
+  onChange,
+}) => {
   return (
     <textarea
-      className="h-32 min-h-16 rounded-md border px-3 py-2"
+      className="h-64 min-h-16 rounded-md border px-3 py-2 "
       name={name}
       id={id}
       placeholder={placeholder}
+      value={value}
+      onChange={onChange}
     ></textarea>
   );
 };
