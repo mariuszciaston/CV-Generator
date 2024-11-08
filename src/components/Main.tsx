@@ -1,7 +1,7 @@
 import { useState } from "react";
 import InputSection from "./Form/InputSection";
 import PreviewSection from "./Preview/PreviewSection";
-import { Data } from "./types";
+import { Data, HandleDataChangeProps } from "./types";
 
 const Main = () => {
   const [data, setData] = useState<Data>({
@@ -14,7 +14,7 @@ const Main = () => {
     summary: "",
   });
 
-  const handleDataChange = (field: keyof Data, value: string) => {
+  const handleDataChange: HandleDataChangeProps = (field, value) => {
     setData((prev) => ({
       ...prev,
       [field]: value,

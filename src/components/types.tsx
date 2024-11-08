@@ -8,9 +8,11 @@ export interface Data {
   summary: string;
 }
 
+export type HandleDataChangeProps = (field: keyof Data, value: string) => void;
+
 export interface InputSectionProps {
   data: Data;
-  onDataChange: (field: keyof Data, value: string) => void;
+  onDataChange: HandleDataChangeProps;
 }
 
 export interface ButtonProps {
