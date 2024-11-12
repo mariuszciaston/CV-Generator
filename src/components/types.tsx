@@ -25,6 +25,10 @@ export interface InputSectionProps {
   onDataChange: HandleDataChangeProps;
 }
 
+export type InputChangeEvent = React.ChangeEvent<
+  HTMLInputElement | HTMLTextAreaElement
+>;
+
 export interface ButtonProps {
   text: string;
   className: string;
@@ -32,31 +36,21 @@ export interface ButtonProps {
 
 export interface cardDetailsProps {
   title: string;
-  Icon: React.ElementType;
+  Icon?: React.ElementType;
 }
 
-export interface CardProps {
-  title: string;
-  Icon: React.ElementType;
+export interface CardProps extends Data, cardDetailsProps {
   isOpen: boolean;
   onToggle: (title: string) => void;
 
-  fullName: string;
   onFullNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  jobTitle: string;
   onJobTitleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  address: string;
   onAddressChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  email: string;
   onEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  phoneNumber: string;
   onPhoneNumberChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  website: string;
   onWebsiteChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  summary: string;
-  onSummaryChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  skills: string;
-  onSkillsChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSummaryChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onSkillsChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export interface InputFieldProps {
@@ -78,8 +72,5 @@ export interface TextareaProps {
   id: string;
   placeholder: string;
   value: string;
-
-  
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onChange: any;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }

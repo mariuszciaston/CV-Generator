@@ -2,27 +2,27 @@ import InputFields from "./InputFields";
 import ChevronBtn from "./ChevronBtn";
 import { CardProps } from "../types";
 
-const Card: React.FC<CardProps> = ({
+const Card: React.FC<CardProps > = ({
   title,
   Icon,
   isOpen,
   onToggle,
 
   fullName,
-  onFullNameChange,
   jobTitle,
-  onJobTitleChange,
   address,
-  onAddressChange,
   email,
-  onEmailChange,
   phoneNumber,
-  onPhoneNumberChange,
   website,
-  onWebsiteChange,
   summary,
-  onSummaryChange,
   skills,
+  onFullNameChange,
+  onJobTitleChange,
+  onAddressChange,
+  onEmailChange,
+  onPhoneNumberChange,
+  onWebsiteChange,
+  onSummaryChange,
   onSkillsChange,
 }) => {
   return (
@@ -38,20 +38,20 @@ const Card: React.FC<CardProps> = ({
         isOpen={isOpen}
         title={title}
         fullName={fullName}
-        onFullNameChange={onFullNameChange}
         jobTitle={jobTitle}
-        onJobTitleChange={onJobTitleChange}
         address={address}
-        onAddressChange={onAddressChange}
         email={email}
-        onEmailChange={onEmailChange}
         phoneNumber={phoneNumber}
-        onPhoneNumberChange={onPhoneNumberChange}
         website={website}
-        onWebsiteChange={onWebsiteChange}
         summary={summary}
-        onSummaryChange={onSummaryChange}
         skills={skills}
+        onFullNameChange={onFullNameChange}
+        onJobTitleChange={onJobTitleChange}
+        onAddressChange={onAddressChange}
+        onEmailChange={onEmailChange}
+        onPhoneNumberChange={onPhoneNumberChange}
+        onWebsiteChange={onWebsiteChange}
+        onSummaryChange={onSummaryChange}
         onSkillsChange={onSkillsChange}
       />
     </div>

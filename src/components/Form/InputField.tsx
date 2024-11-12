@@ -20,7 +20,7 @@ const InputField: React.FC<InputFieldProps> = ({
         className="rounded-md border px-3 py-2"
         placeholder={placeholder}
         value={value}
-        onChange={(e) => onChange?.(e)} // Zmiana tutaj - przekazujemy całe zdarzenie
+        onChange={(e) => onChange?.(e)}
       />
     </div>
   );
