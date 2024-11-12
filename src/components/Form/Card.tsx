@@ -2,7 +2,7 @@ import InputFields from "./InputFields";
 import ChevronBtn from "./ChevronBtn";
 import { CardProps } from "../types";
 
-const Card: React.FC<CardProps > = ({
+const Card: React.FC<CardProps> = ({
   title,
   Icon,
   isOpen,

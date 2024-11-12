@@ -9,7 +9,7 @@ const Textarea: React.FC<TextareaProps> = ({
 }) => {
   return (
     <textarea
-      className="h-64 min-h-16 rounded-md border px-3 py-2 "
+      className="h-64 min-h-16 rounded-md border px-3 py-2"
       name={name}
       id={id}
       placeholder={placeholder}

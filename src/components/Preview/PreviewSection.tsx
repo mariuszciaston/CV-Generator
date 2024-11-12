@@ -1,6 +1,6 @@
-import { Data } from "../types";
+import { DataProps } from "../types";
 
-const PreviewSection: React.FC<Data> = ({
+const PreviewSection: React.FC<DataProps> = ({
   fullName,
   jobTitle,
   address,

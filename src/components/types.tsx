@@ -1,4 +1,4 @@
-export interface Data {
+export interface DataProps {
   fullName: string;
   jobTitle: string;
   address: string;
@@ -18,11 +18,16 @@ export interface Data {
   // degree: string;
 }
 
-export type HandleDataChangeProps = (field: keyof Data, value: string) => void;
+export type HandleDataChangeProps = (
+  field: keyof DataProps,
+  value: string,
+) => void;
 
 export interface InputSectionProps {
-  data: Data;
+  data: DataProps;
   onDataChange: HandleDataChangeProps;
+  loadExampleData?: () => void;
+  clearResumeData?: () => void;
 }
 
 export type InputChangeEvent = React.ChangeEvent<
@@ -32,6 +37,7 @@ export type InputChangeEvent = React.ChangeEvent<
 export interface ButtonProps {
   text: string;
   className: string;
+  onClick?: () => void;
 }
 
 export interface cardDetailsProps {
@@ -39,7 +45,7 @@ export interface cardDetailsProps {
   Icon?: React.ElementType;
 }
 
-export interface CardProps extends Data, cardDetailsProps {
+export interface CardProps extends DataProps, cardDetailsProps {
   isOpen: boolean;
   onToggle: (title: string) => void;
 
