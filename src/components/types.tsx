@@ -6,6 +6,16 @@ export interface Data {
   phoneNumber: string;
   website: string;
   summary: string;
+  skills: string;
+
+  // position: string;
+  // company: string;
+  // city: string;
+  // description: string;
+  // startDate: string;
+  // endDate: string;
+  // school: string;
+  // degree: string;
 }
 
 export type HandleDataChangeProps = (field: keyof Data, value: string) => void;
@@ -45,6 +55,8 @@ export interface CardProps {
   onWebsiteChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   summary: string;
   onSummaryChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  skills: string;
+  onSkillsChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface InputFieldProps {
@@ -67,5 +79,7 @@ export interface TextareaProps {
   placeholder: string;
   value: string;
 
+  
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChange: any;
 }

@@ -8,6 +8,7 @@ const PreviewSection: React.FC<Data> = ({
   phoneNumber,
   website,
   summary,
+  skills,
 }) => {
   return (
     <section
@@ -16,25 +17,28 @@ const PreviewSection: React.FC<Data> = ({
     >
       <div
         id="page"
-        className="aspect-[210/297] break-words border bg-white p-[calc(100%/21*1.5)] shadow-lg"
+        className="flex aspect-[210/297] flex-col gap-4 break-words border bg-white p-[calc(100%/21*1.5)] shadow-lg"
       >
         <h1 className="font-bold">Personal Information</h1>
-        <p className="border">Full Name: {fullName}</p>
-        <p className="border">Job Title: {jobTitle}</p>
-        <p className="border">Address: {address}</p>
-        <p className="border">Email: {email}</p>
-        <p className="border">Phone Number: {phoneNumber}</p>
-        <p className="border">Website: {website}</p>
-
+        <hr className="border-t-2 border-black" />
+        <p className="border">{fullName}</p>
+        <p className="border">{jobTitle}</p>
+        <p className="border">{address}</p>
+        <p className="border">{email}</p>
+        <p className="border">{phoneNumber}</p>
+        <p className="border">{website}</p>
         <h1 className="font-bold">Summary</h1>
-        <p className="border">Summary: {summary}</p>
-
-        {/* <h1 className="font-bold">Experience</h1>
-      
+        <hr className="border-t-2 border-black" />
+        <p className="border">{summary}</p>
+        <h1 className="font-bold">Experience</h1>
+        <hr className="border-t-2 border-black" />
+        Tutaj doświadczenie ...
         <h1 className="font-bold">Education</h1>
-
+        <hr className="border-t-2 border-black" />
+        Tutaj edukacja ...
         <h1 className="font-bold">Skills</h1>
-        <p className="border">Skills: {skills}</p> */}
+        <hr className="border-t-2 border-black" />
+        <p className="border">{skills}</p>
       </div>
     </section>
   );

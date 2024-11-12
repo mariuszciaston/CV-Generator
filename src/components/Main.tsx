@@ -5,13 +5,14 @@ import { Data, HandleDataChangeProps } from "./types";
 
 const Main = () => {
   const [data, setData] = useState<Data>({
-    fullName: "",
-    jobTitle: "",
-    address: "",
-    email: "",
-    phoneNumber: "",
-    website: "",
-    summary: "",
+    fullName: "Joe Doe",
+    jobTitle: "Software Developer",
+    address: "Cracow, Poland",
+    email: "example@example.com",
+    phoneNumber: "666 777 888",
+    website: "www.example.com",
+    summary: "I am a ...",
+    skills: "React / Typescript / Tailwind",
   });
 
   const handleDataChange: HandleDataChangeProps = (field, value) => {

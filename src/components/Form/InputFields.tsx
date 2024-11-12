@@ -16,6 +16,7 @@ const InputFields: React.FC<
     | "phoneNumber"
     | "website"
     | "summary"
+    | "skills"
     | "onFullNameChange"
     | "onJobTitleChange"
     | "onAddressChange"
@@ -23,6 +24,7 @@ const InputFields: React.FC<
     | "onPhoneNumberChange"
     | "onWebsiteChange"
     | "onSummaryChange"
+    | "onSkillsChange"
   >
 > = ({
   isOpen,
@@ -34,13 +36,15 @@ const InputFields: React.FC<
   phoneNumber,
   website,
   summary,
+  skills,
   onFullNameChange,
   onJobTitleChange,
   onAddressChange,
   onEmailChange,
   onPhoneNumberChange,
   onWebsiteChange,
-  onSummaryChange
+  onSummaryChange,
+  onSkillsChange,
 }) => {
   if (!isOpen) {
     return null;
@@ -193,13 +197,15 @@ const InputFields: React.FC<
           <Button text="Add" className="bg-blue-500" />
         </>
       )}
-      {/* {title === cardDetails[4].title && (
+      {title === cardDetails[4].title && (
         <Textarea
           name={cardDetails[4].title.toLowerCase()}
           id={cardDetails[4].title.toLowerCase()}
           placeholder="Enter your skills"
+          value={skills}
+          onChange={onSkillsChange}
         />
-      )} */}
+      )}
     </>
   );
 };
