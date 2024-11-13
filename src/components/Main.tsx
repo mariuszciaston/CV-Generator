@@ -1,5 +1,5 @@
-import InputSection from "./Form/InputSection";
-import PreviewSection from "./Preview/PreviewSection";
+import InputSection from "./form/InputSection";
+import PreviewSection from "./preview/PreviewSection";
 import useResumeData from "./hooks/useResumeData";
 import usePrint from "./hooks/useReactToPrint";
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { emptyData, exampleData } from "../Form/data";
+import { emptyData, exampleData } from "../form/data";
 import { DataProps, HandleDataChangeProps } from "../types";
 
 const useResumeData = () => {

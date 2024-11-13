@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { InputSectionProps, InputChangeEvent } from "../types";
-import cardDetails from "../Form/cardDetails";
+import cardDetails from "../form/cardDetails";
 
 const useCards = ({ data, onDataChange }: InputSectionProps) => {
   const [openCard, setOpenCard] = useState<string | null>(cardDetails[0].title);
