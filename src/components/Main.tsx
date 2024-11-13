@@ -8,21 +8,22 @@ const Main = () => {
     fullName: "",
     jobTitle: "",
     address: "",
-    email: "",
     phoneNumber: "",
+    email: "",
     website: "",
     summary: "",
     skills: "",
   };
 
   const exampleData: DataProps = {
-    fullName: "Joe Doe",
+    fullName: "John Doe",
     jobTitle: "Software Developer",
     address: "Cracow, Poland",
-    email: "example@example.com",
-    phoneNumber: "666 777 888",
+    phoneNumber: "123 456 789",
+    email: "john.doe@example.com",
     website: "www.example.com",
-    summary: "I am a ...",
+    summary:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     skills: "React / Typescript / Tailwind",
   };
 

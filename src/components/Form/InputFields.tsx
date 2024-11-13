@@ -12,8 +12,8 @@ const InputFields: React.FC<
     | "fullName"
     | "jobTitle"
     | "address"
-    | "email"
     | "phoneNumber"
+    | "email"
     | "website"
     | "summary"
     | "skills"
@@ -32,8 +32,8 @@ const InputFields: React.FC<
   fullName,
   jobTitle,
   address,
-  email,
   phoneNumber,
+  email,
   website,
   summary,
   skills,
@@ -80,20 +80,20 @@ const InputFields: React.FC<
             onChange={onAddressChange}
           />
           <InputField
-            label="Email"
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={onEmailChange}
-          />
-          <InputField
             label="Phone Number"
             type="tel"
             id="phoneNumber"
             placeholder="Enter your phone number"
             value={phoneNumber}
             onChange={onPhoneNumberChange}
+          />
+          <InputField
+            label="Email"
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={onEmailChange}
           />
           <InputField
             label="Website"

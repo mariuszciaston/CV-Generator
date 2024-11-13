@@ -11,8 +11,8 @@ const Card: React.FC<CardProps> = ({
   fullName,
   jobTitle,
   address,
-  email,
   phoneNumber,
+  email,
   website,
   summary,
   skills,
@@ -40,8 +40,8 @@ const Card: React.FC<CardProps> = ({
         fullName={fullName}
         jobTitle={jobTitle}
         address={address}
-        email={email}
         phoneNumber={phoneNumber}
+        email={email}
         website={website}
         summary={summary}
         skills={skills}
