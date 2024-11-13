@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import InputSection from "./Form/InputSection";
 import PreviewSection from "./Preview/PreviewSection";
 import { DataProps, HandleDataChangeProps } from "./types";
+import { useReactToPrint } from "react-to-print";
 
 const Main = () => {
   const emptyData: DataProps = {
@@ -29,6 +30,9 @@ const Main = () => {
 
   const [data, setData] = useState<DataProps>({ ...emptyData });
 
+  const contentRef = useRef<HTMLDivElement>(null);
+  const reactToPrintFn = useReactToPrint({ contentRef });
+
   const handleDataChange: HandleDataChangeProps = (field, value) => {
     setData((prev) => ({
       ...prev,
@@ -51,8 +55,9 @@ const Main = () => {
         onDataChange={handleDataChange}
         loadExampleData={loadExampleData}
         clearResumeData={clearResumeData}
+        saveAsPdf={reactToPrintFn}
       />
-      <PreviewSection {...data} />
+      <PreviewSection ref={contentRef} {...data} />
     </main>
   );
 };

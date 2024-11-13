@@ -28,6 +28,7 @@ export interface InputSectionProps {
   onDataChange: HandleDataChangeProps;
   loadExampleData?: () => void;
   clearResumeData?: () => void;
+  saveAsPdf?: () => void;
 }
 
 export type InputChangeEvent = React.ChangeEvent<

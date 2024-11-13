@@ -7,6 +7,7 @@ const InputSection: React.FC<InputSectionProps> = ({
   onDataChange,
   loadExampleData,
   clearResumeData,
+  saveAsPdf,
 }) => {
   return (
     <section
@@ -26,7 +27,7 @@ const InputSection: React.FC<InputSectionProps> = ({
         />
       </div>
       <Cards data={data} onDataChange={onDataChange} />
-      <Button text="Save as PDF" className="bg-green-500" />
+      <Button onClick={saveAsPdf} text="Save as PDF" className="bg-green-500" />
     </section>
   );
 };
