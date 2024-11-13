@@ -1,22 +1,16 @@
-import { useState } from "react";
 import Card from "./Card";
 import cardDetails from "./cardDetails";
-import { InputSectionProps, InputChangeEvent } from "../types";
+import { InputSectionProps } from "../types";
+import useCards from "../hooks/useCards";
 
 const Cards: React.FC<InputSectionProps> = ({ data, onDataChange }) => {
-  const [openCard, setOpenCard] = useState<string | null>(cardDetails[0].title);
-
-  const handleToggle = (title: string) => {
-    setOpenCard((prev) => (prev === title ? null : title));
-  };
-
-  const handleFieldChange =
-    (field: keyof typeof data) => (e: InputChangeEvent) => {
-      onDataChange(field, e.target.value);
-    };
+  const { openCard, handleToggle, handleFieldChange } = useCards({
+    data,
+    onDataChange,
+  });
 
   return (
-    <div id="Cards" className="flex flex-col flex-wrap gap-4">
+    <div id="cards" className="flex flex-col flex-wrap gap-4">
       {cardDetails.map(({ title, Icon }) => (
         <Card
           key={title}

@@ -1,0 +1,20 @@
+import { useState } from "react";
+import { InputSectionProps, InputChangeEvent } from "../types";
+import cardDetails from "../Form/cardDetails";
+
+const useCards = ({ data, onDataChange }: InputSectionProps) => {
+  const [openCard, setOpenCard] = useState<string | null>(cardDetails[0].title);
+
+  const handleToggle = (title: string) => {
+    setOpenCard((prev) => (prev === title ? null : title));
+  };
+
+  const handleFieldChange =
+    (field: keyof typeof data) => (e: InputChangeEvent) => {
+      onDataChange(field, e.target.value);
+    };
+
+  return { data, openCard, handleToggle, handleFieldChange };
+};
+
+export default useCards;
