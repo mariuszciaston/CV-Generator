@@ -9,7 +9,7 @@ const Main = () => {
   const { contentRef, reactToPrintFn } = usePrint();
 
   return (
-    <main className="flex w-[calc(100vw-2rem)] max-w-[640px] flex-wrap items-center gap-8 my-8 lg:max-w-[1180px] lg:flex-row lg:items-start lg:m-8">
+    <main className="flex w-[calc(100vw-2rem)] max-w-[640px] flex-wrap items-center gap-8 py-8 lg:max-w-[1180px] lg:flex-row lg:items-start lg:p-8">
       <InputSection
         data={data}
         onDataChange={handleDataChange}

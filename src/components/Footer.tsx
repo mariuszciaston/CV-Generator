@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-end mb-8 text-sm lg:mx-8">
+    <footer className="flex items-center justify-end pb-8 text-sm lg:px-8">
       Mariusz Ciastoń 2024 &nbsp;
       <a
         href="https://github.com/mariuszciaston/"
