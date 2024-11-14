@@ -1,5 +1,12 @@
 import { forwardRef } from "react";
 import { DataProps } from "../types";
+
+import PersonalInfo from "./PersonalInfo";
+import Summary from "./Summary";
+// import Experience from "./Experience";
+// import Education from "./Education";
+import Skills from "./Skills";
+
 const PreviewSection = forwardRef<HTMLDivElement, DataProps>(
   (
     {
@@ -24,75 +31,22 @@ const PreviewSection = forwardRef<HTMLDivElement, DataProps>(
           ref={ref}
           className="flex aspect-[210/297] flex-col break-words border bg-white p-[calc(100%/21)] shadow-lg"
         >
-          {(fullName || jobTitle) && (
-            <>
-              {fullName && (
-                <p className="text-4xl font-medium text-blue-500">{fullName}</p>
-              )}
-              {jobTitle && <p className="text-3xl font-light">{jobTitle}</p>}
-              <br />
-            </>
-          )}
+          <PersonalInfo
+            fullName={fullName}
+            jobTitle={jobTitle}
+            address={address}
+            email={email}
+            phoneNumber={phoneNumber}
+            website={website}
+          />
 
-          {(address || phoneNumber || email || website) && (
-            <>
-              <p>
-                {address && (
-                  <>
-                    {address} {phoneNumber || email || website ? " | " : ""}
-                  </>
-                )}
-                {phoneNumber && (
-                  <>
-                    {phoneNumber} {email || website ? " | " : ""}
-                  </>
-                )}
-                {email && (
-                  <>
-                    {email} {website ? " | " : ""}
-                  </>
-                )}
-                {website}
-              </p>
+          <Summary summary={summary} />
 
-              <br />
-            </>
-          )}
+          {/* <Experience experience={experience} />
 
-          {summary && (
-            <>
-              <h2 className="font-medium text-blue-500">SUMMARY</h2>
-              <p>{summary}</p>
-              <br />
-            </>
-          )}
+          <Education education={education} /> */}
 
-          {/* <h2 className="font-medium text-blue-500">EXPERIENCE</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-
-        <br />
-
-        <h2 className="font-medium text-blue-500">EDUCATION</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-
-        <br /> */}
-
-          {skills && (
-            <>
-              <h2 className="font-medium text-blue-500">SKILLS</h2>
-              <p>{skills}</p>
-            </>
-          )}
+          <Skills skills={skills} />
         </div>
       </section>
     );
