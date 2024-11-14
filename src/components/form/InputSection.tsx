@@ -12,7 +12,7 @@ const InputSection: React.FC<InputSectionProps> = ({
   return (
     <section
       id="input-section"
-      className="flex w-full min-w-[256px] max-w-[768px] flex-col gap-4 lg:w-[320px]"
+      className="flex w-full min-w-[256px] flex-col gap-4 lg:w-[320px]"
     >
       <div id="loadClearBtns" className="flex flex-wrap gap-2">
         <Button
