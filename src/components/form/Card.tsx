@@ -1,5 +1,5 @@
 import InputFields from "./InputFields";
-import ChevronBtn from "../utils/ChevronBtn";
+import ChevronBtn from "../common/ChevronBtn";
 import { CardProps } from "../types";
 
 const Card: React.FC<CardProps> = ({

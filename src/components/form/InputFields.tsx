@@ -1,6 +1,6 @@
-import InputField from "../utils/InputField";
-import Textarea from "../utils/Textarea";
-import Button from "../utils/Button";
+import InputField from "../common/InputField";
+import Textarea from "../common/Textarea";
+import Button from "../common/Button";
 import { CardProps } from "../types";
 import cardDetails from "./cardDetails";
 

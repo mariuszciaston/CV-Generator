@@ -1,5 +1,5 @@
 import Cards from "./Cards";
-import Button from "../utils/Button";
+import Button from "../common/Button";
 import { InputSectionProps } from "../types";
 
 const InputSection: React.FC<InputSectionProps> = ({
