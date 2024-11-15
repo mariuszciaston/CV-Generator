@@ -8,14 +8,24 @@ export interface DataProps {
   summary: string;
   skills: string;
 
-  // position: string;
-  // company: string;
-  // city: string;
-  // description: string;
-  // startDate: string;
-  // endDate: string;
-  // school: string;
-  // degree: string;
+  experience: {
+    // id: string;
+    position: string;
+    // company: string;
+    // city: string;
+    // description: string;
+    // startDate: string;
+    // endDate: string;
+  }[];
+
+  education: {
+    // id: string;
+    school: string;
+    // city: string;
+    // degree: string;
+    // startDate: string;
+    // endDate: string;
+  }[];
 }
 
 export type HandleDataChangeProps = (
@@ -58,6 +68,9 @@ export interface CardProps extends DataProps, cardDetailsProps {
   onWebsiteChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSummaryChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onSkillsChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+
+  // onExperienceChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  // onEducationChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export interface InputFieldProps {

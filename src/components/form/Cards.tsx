@@ -26,6 +26,8 @@ const Cards: React.FC<InputSectionProps> = ({ data, onDataChange }) => {
           website={data.website}
           summary={data.summary}
           skills={data.skills}
+          experience={data.experience}
+          education={data.education}
           onFullNameChange={handleFieldChange("fullName")}
           onJobTitleChange={handleFieldChange("jobTitle")}
           onAddressChange={handleFieldChange("address")}
@@ -34,6 +36,8 @@ const Cards: React.FC<InputSectionProps> = ({ data, onDataChange }) => {
           onWebsiteChange={handleFieldChange("website")}
           onSummaryChange={handleFieldChange("summary")}
           onSkillsChange={handleFieldChange("skills")}
+          // onExperienceChange={handleFieldChange("experience")}
+          // onEducationChange={handleFieldChange("education")}
         />
       ))}
     </div>

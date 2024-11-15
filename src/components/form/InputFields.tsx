@@ -3,6 +3,8 @@ import Textarea from "../common/Textarea";
 import Button from "../common/Button";
 import { CardProps } from "../types";
 import cardDetails from "./cardDetails";
+import ExperienceForm from "./ExperienceForm";
+import EducationForm from "./EducationForm";
 
 const InputFields: React.FC<
   Pick<
@@ -17,6 +19,8 @@ const InputFields: React.FC<
     | "website"
     | "summary"
     | "skills"
+    | "experience"
+    | "education"
     | "onFullNameChange"
     | "onJobTitleChange"
     | "onAddressChange"
@@ -25,6 +29,8 @@ const InputFields: React.FC<
     | "onWebsiteChange"
     | "onSummaryChange"
     | "onSkillsChange"
+    // | "onExperienceChange"
+    // | "onEducationChange"
   >
 > = ({
   isOpen,
@@ -37,6 +43,8 @@ const InputFields: React.FC<
   website,
   summary,
   skills,
+  experience,
+  education,
   onFullNameChange,
   onJobTitleChange,
   onAddressChange,
@@ -45,10 +53,18 @@ const InputFields: React.FC<
   onWebsiteChange,
   onSummaryChange,
   onSkillsChange,
+  // onExperienceChange,
+  // onEducationChange
 }) => {
   if (!isOpen) {
     return null;
   }
+
+  // const [data, setData] = useState<DataProps>({ ...emptyData });
+
+  // const addExperienceForm = () => {
+  //   setData(exampleData);
+  // };
 
   return (
     <>
@@ -118,83 +134,31 @@ const InputFields: React.FC<
 
       {title === cardDetails[2].title && (
         <>
-          <InputField
-            label="Position"
-            type="text"
-            id="position"
-            placeholder="Enter your Role/Job Title"
-          />
-          <InputField
-            label="Company"
-            type="text"
-            id="company"
-            placeholder="Enter company's name"
-          />
-          <InputField
-            label="City"
-            type="text"
-            id="city"
-            placeholder="Enter a city"
-          />
-          <InputField
-            label="Description"
-            type="text"
-            id="description"
-            placeholder="Job responsibility"
-          />
-          <InputField
-            label="Start Date"
-            type="date"
-            id="startDate"
-            placeholder="Enter start date"
-          />
-          <InputField
-            label="End Date"
-            type="date"
-            id="endDate"
-            placeholder="Enter end date"
-          />
+          <div id="ExperienceForms" className="flex flex-col gap-4">
+            <ExperienceForm experience={experience} />
+            <ExperienceForm experience={experience} />
+          </div>
 
-          <Button text="Remove" className="bg-red-500" />
-          <Button text="Add" className="bg-blue-500" />
+          <Button
+            // onClick={addExperienceForm}
+            text="Add"
+            className="bg-blue-500"
+          />
         </>
       )}
+
       {title === cardDetails[3].title && (
         <>
-          <InputField
-            label="School/University"
-            type="text"
-            id="school"
-            placeholder="Enter School/University"
-          />
-          <InputField
-            label="City"
-            type="text"
-            id="city"
-            placeholder="Enter a city"
-          />
-          <InputField
-            label="Degree"
-            type="text"
-            id="degree"
-            placeholder="Enter Degree"
-          />
+          <div id="EducationForms" className="flex flex-col gap-4">
+            <EducationForm education={education} />
+            <EducationForm education={education} />
+          </div>
 
-          <InputField
-            label="Start Date"
-            type="date"
-            id="startDate"
-            placeholder="Enter start date"
+          <Button
+            // onClick={addEducationForm}
+            text="Add"
+            className="bg-blue-500"
           />
-          <InputField
-            label="End Date"
-            type="date"
-            id="endDate"
-            placeholder="Enter end date"
-          />
-
-          <Button text="Remove" className="bg-red-500" />
-          <Button text="Add" className="bg-blue-500" />
         </>
       )}
       {title === cardDetails[4].title && (

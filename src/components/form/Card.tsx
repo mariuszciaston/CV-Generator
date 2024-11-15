@@ -16,6 +16,8 @@ const Card: React.FC<CardProps> = ({
   website,
   summary,
   skills,
+  experience,
+  education,
   onFullNameChange,
   onJobTitleChange,
   onAddressChange,
@@ -24,6 +26,8 @@ const Card: React.FC<CardProps> = ({
   onWebsiteChange,
   onSummaryChange,
   onSkillsChange,
+  // onExperienceChange,
+  // onEducationChange,
 }) => {
   return (
     <div className="flex flex-col gap-4 rounded-md border bg-white p-4 shadow">
@@ -45,6 +49,8 @@ const Card: React.FC<CardProps> = ({
         website={website}
         summary={summary}
         skills={skills}
+        experience={experience}
+        education={education}
         onFullNameChange={onFullNameChange}
         onJobTitleChange={onJobTitleChange}
         onAddressChange={onAddressChange}
@@ -53,6 +59,8 @@ const Card: React.FC<CardProps> = ({
         onWebsiteChange={onWebsiteChange}
         onSummaryChange={onSummaryChange}
         onSkillsChange={onSkillsChange}
+        // onExperienceChange={onExperienceChange}
+        // onEducationChange={onEducationChange}
       />
     </div>
   );
