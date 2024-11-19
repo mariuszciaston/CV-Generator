@@ -12,7 +12,7 @@ const emptyData: DataProps = {
 
   experience: [
     {
-      id: "",
+      id: crypto.randomUUID(),
       position: "",
       company: "",
       city: "",
@@ -24,7 +24,7 @@ const emptyData: DataProps = {
 
   education: [
     {
-      id: "",
+      id: crypto.randomUUID(),
       school: "",
       city: "",
       degree: "",

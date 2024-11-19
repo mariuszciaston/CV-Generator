@@ -1,11 +1,11 @@
 import InputField from "../common/InputField";
 import Button from "../common/Button";
-// import { CardProps } from "../types";
+import { DataProps } from "../types";
 
 const EducationForm: React.FC<{
-  // education: any[];
+  form: DataProps["education"][0];
   onRemove: () => void;
-}> = ({ onRemove }) => {
+}> = ({ form, onRemove }) => {
   return (
     <div className="flex flex-col gap-4 rounded-md bg-orange-100 p-4">
       <InputField
@@ -13,20 +13,21 @@ const EducationForm: React.FC<{
         type="text"
         id="school"
         placeholder="Enter School/University"
-        // value={education[0].school}
+        value={form.school}
       />
       <InputField
         label="City"
         type="text"
         id="city"
         placeholder="Enter a city"
-        // value={education[0].city}
+        value={form.city}
       />
       <InputField
         label="Degree"
         type="text"
         id="degree"
         placeholder="Enter Degree"
+        value={form.degree}
       />
 
       <InputField
@@ -34,12 +35,14 @@ const EducationForm: React.FC<{
         type="text"
         id="startDate"
         placeholder="Enter start date"
+        value={form.startDate}
       />
       <InputField
         label="End Date"
         type="text"
         id="endDate"
         placeholder="Enter end date"
+        value={form.endDate}
       />
 
       <Button text="Remove" className="bg-orange-500" onClick={onRemove} />

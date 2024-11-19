@@ -6,6 +6,7 @@ import { CardProps } from "../types";
 import cardDetails from "./cardDetails";
 import ExperienceForm from "./ExperienceForm";
 import EducationForm from "./EducationForm";
+import { emptyData } from "./data";
 
 const InputFields: React.FC<
   Pick<
@@ -60,11 +61,11 @@ const InputFields: React.FC<
   // onEducationChange,
 }) => {
   const [experienceForms, setExperienceForms] = useState([
-    { id: crypto.randomUUID() },
+    emptyData.experience[0],
   ]);
 
   const addExperienceForm = () => {
-    setExperienceForms((prev) => [...prev, { id: crypto.randomUUID() }]);
+    setExperienceForms((prev) => [...prev, emptyData.experience[0]]);
   };
 
   const removeExperienceForm = (id: string) => {
@@ -72,11 +73,11 @@ const InputFields: React.FC<
   };
 
   const [educationForms, setEducationForms] = useState([
-    { id: crypto.randomUUID() },
+    emptyData.education[0],
   ]);
 
   const addEducationForm = () => {
-    setEducationForms((prev) => [...prev, { id: crypto.randomUUID() }]);
+    setEducationForms((prev) => [...prev, emptyData.education[0]]);
   };
 
   const removeEducationForm = (id: string) => {
@@ -158,7 +159,7 @@ const InputFields: React.FC<
           {experienceForms.map((form) => (
             <ExperienceForm
               key={form.id}
-              // experience={experience}
+              form={form}
               onRemove={() => removeExperienceForm(form.id)}
             />
           ))}
@@ -176,7 +177,7 @@ const InputFields: React.FC<
           {educationForms.map((form) => (
             <EducationForm
               key={form.id}
-              // education={education}
+              form={form}
               onRemove={() => removeEducationForm(form.id)}
             />
           ))}
