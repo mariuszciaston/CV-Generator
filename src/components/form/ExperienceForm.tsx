@@ -35,13 +35,13 @@ const ExperienceForm: React.FC<Pick<CardProps, "experience">> = ({
       />
       <InputField
         label="Start Date"
-        type="date"
+        type="text"
         id="startDate"
         placeholder="Enter start date"
       />
       <InputField
         label="End Date"
-        type="date"
+        type="text"
         id="endDate"
         placeholder="Enter end date"
       />
