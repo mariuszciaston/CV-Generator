@@ -6,7 +6,7 @@ const Summary: React.FC<Pick<DataProps, "summary">> = ({ summary }) => {
       <div id="summary">
         {summary && (
           <>
-            <h2 className="font-medium text-blue-500">SUMMARY</h2>
+            <h2 className="font-semibold text-blue-500">SUMMARY</h2>
             <p>{summary}</p>
             <br />
           </>

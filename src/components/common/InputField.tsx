@@ -10,7 +10,7 @@ const InputField: React.FC<InputFieldProps> = ({
 }) => {
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-sm font-medium" htmlFor={id}>
+      <label className="text-sm font-semibold" htmlFor={id}>
         {label}
       </label>
       <input

@@ -6,7 +6,7 @@
 //   return (
 //     <>
 //       <div id="experience">
-//         <h2 className="font-medium text-blue-500">EXPERIENCE</h2>
+//         <h2 className="font-semibold text-blue-500">EXPERIENCE</h2>
 //         <p>
 //           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 //           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

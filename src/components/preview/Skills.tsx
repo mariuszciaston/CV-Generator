@@ -6,7 +6,7 @@ const Skills: React.FC<Pick<DataProps, "skills">> = ({ skills }) => {
       <div id="skills">
         {skills && (
           <>
-            <h2 className="font-medium text-blue-500">SKILLS</h2>
+            <h2 className="font-semibold text-blue-500">SKILLS</h2>
             <p>{skills}</p>
           </>
         )}

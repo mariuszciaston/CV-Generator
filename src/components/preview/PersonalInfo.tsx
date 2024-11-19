@@ -12,7 +12,7 @@ const PersonalInfo: React.FC<
         {(fullName || jobTitle) && (
           <>
             {fullName && (
-              <p className="text-4xl font-medium text-blue-500">{fullName}</p>
+              <p className="text-4xl font-semibold text-blue-500">{fullName}</p>
             )}
             {jobTitle && <p className="text-3xl font-light">{jobTitle}</p>}
             <br />
