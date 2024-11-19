@@ -9,22 +9,22 @@ export interface DataProps {
   skills: string;
 
   experience: {
-    // id: string;
+    uuid: string;
     position: string;
-    // company: string;
-    // city: string;
-    // description: string;
-    // startDate: string;
-    // endDate: string;
+    company: string;
+    city: string;
+    description: string;
+    startDate: string;
+    endDate: string;
   }[];
 
   education: {
-    // id: string;
+    uuid: string;
     school: string;
-    // city: string;
-    // degree: string;
-    // startDate: string;
-    // endDate: string;
+    city: string;
+    degree: string;
+    startDate: string;
+    endDate: string;
   }[];
 }
 
