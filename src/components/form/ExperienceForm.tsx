@@ -1,10 +1,11 @@
 import InputField from "../common/InputField";
 import Button from "../common/Button";
-import { CardProps } from "../types";
+// import { CardProps } from "../types";
 
-const ExperienceForm: React.FC<Pick<CardProps, "experience">> = ({
-  experience,
-}) => {
+const ExperienceForm: React.FC<{
+  // experience: any[];
+  onRemove: () => void;
+}> = ({ onRemove }) => {
   return (
     <div className="flex flex-col gap-4 rounded-md bg-orange-100 p-4">
       <InputField
@@ -12,8 +13,7 @@ const ExperienceForm: React.FC<Pick<CardProps, "experience">> = ({
         type="text"
         id="position"
         placeholder="Enter your Role/Job Title"
-        value={experience[0].position}
-        // onChange={onExperienceChange}
+        // value={experience[0].position}
       />
       <InputField
         label="Company"
@@ -46,7 +46,7 @@ const ExperienceForm: React.FC<Pick<CardProps, "experience">> = ({
         placeholder="Enter end date"
       />
 
-      <Button text="Remove" className="bg-orange-500" />
+      <Button text="Remove" className="bg-orange-500" onClick={onRemove} />
     </div>
   );
 };

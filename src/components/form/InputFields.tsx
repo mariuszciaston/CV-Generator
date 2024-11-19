@@ -1,3 +1,4 @@
+import { useState } from "react";
 import InputField from "../common/InputField";
 import Textarea from "../common/Textarea";
 import Button from "../common/Button";
@@ -31,6 +32,8 @@ const InputFields: React.FC<
     | "onSkillsChange"
     // | "onExperienceChange"
     // | "onEducationChange"
+    | "addExperienceForm"
+    | "addEducationForm"
   >
 > = ({
   isOpen,
@@ -43,8 +46,8 @@ const InputFields: React.FC<
   website,
   summary,
   skills,
-  experience,
-  education,
+  // experience,
+  // education,
   onFullNameChange,
   onJobTitleChange,
   onAddressChange,
@@ -54,17 +57,35 @@ const InputFields: React.FC<
   onSummaryChange,
   onSkillsChange,
   // onExperienceChange,
-  // onEducationChange
+  // onEducationChange,
 }) => {
+  const [experienceForms, setExperienceForms] = useState([
+    { id: crypto.randomUUID() },
+  ]);
+
+  const addExperienceForm = () => {
+    setExperienceForms((prev) => [...prev, { id: crypto.randomUUID() }]);
+  };
+
+  const removeExperienceForm = (id: string) => {
+    setExperienceForms((prev) => prev.filter((form) => form.id !== id));
+  };
+
+  const [educationForms, setEducationForms] = useState([
+    { id: crypto.randomUUID() },
+  ]);
+
+  const addEducationForm = () => {
+    setEducationForms((prev) => [...prev, { id: crypto.randomUUID() }]);
+  };
+
+  const removeEducationForm = (id: string) => {
+    setEducationForms((prev) => prev.filter((form) => form.id !== id));
+  };
+
   if (!isOpen) {
     return null;
   }
-
-  // const [data, setData] = useState<DataProps>({ ...emptyData });
-
-  // const addExperienceForm = () => {
-  //   setData(exampleData);
-  // };
 
   return (
     <>
@@ -134,13 +155,16 @@ const InputFields: React.FC<
 
       {title === cardDetails[2].title && (
         <>
-          <div id="ExperienceForms" className="flex flex-col gap-4">
-            <ExperienceForm experience={experience} />
-            <ExperienceForm experience={experience} />
-          </div>
+          {experienceForms.map((form) => (
+            <ExperienceForm
+              key={form.id}
+              // experience={experience}
+              onRemove={() => removeExperienceForm(form.id)}
+            />
+          ))}
 
           <Button
-            // onClick={addExperienceForm}
+            onClick={addExperienceForm}
             text="Add"
             className="bg-blue-500"
           />
@@ -149,13 +173,16 @@ const InputFields: React.FC<
 
       {title === cardDetails[3].title && (
         <>
-          <div id="EducationForms" className="flex flex-col gap-4">
-            <EducationForm education={education} />
-            <EducationForm education={education} />
-          </div>
+          {educationForms.map((form) => (
+            <EducationForm
+              key={form.id}
+              // education={education}
+              onRemove={() => removeEducationForm(form.id)}
+            />
+          ))}
 
           <Button
-            // onClick={addEducationForm}
+            onClick={addEducationForm}
             text="Add"
             className="bg-blue-500"
           />

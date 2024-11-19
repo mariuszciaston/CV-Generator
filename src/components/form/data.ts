@@ -12,7 +12,7 @@ const emptyData: DataProps = {
 
   experience: [
     {
-      uuid: "",
+      id: "",
       position: "",
       company: "",
       city: "",
@@ -24,7 +24,7 @@ const emptyData: DataProps = {
 
   education: [
     {
-      uuid: "",
+      id: "",
       school: "",
       city: "",
       degree: "",
@@ -47,7 +47,7 @@ const exampleData: DataProps = {
 
   experience: [
     {
-      uuid: "1",
+      id: crypto.randomUUID(),
       position: "Example Position 1",
       company: "Example Company 1",
       city: "Cracow, Poland",
@@ -57,7 +57,7 @@ const exampleData: DataProps = {
       endDate: "2021-01-01",
     },
     {
-      uuid: "2",
+      id: crypto.randomUUID(),
       position: "Example Position 2",
       company: "Example Company 2",
       city: "Cracow, Poland",
@@ -70,7 +70,7 @@ const exampleData: DataProps = {
 
   education: [
     {
-      uuid: "1",
+      id: crypto.randomUUID(),
       school: "Example School",
       city: "Cracow, Poland",
       degree: "Bachelor of Science",
@@ -78,7 +78,7 @@ const exampleData: DataProps = {
       endDate: "2021-01-01",
     },
     {
-      uuid: "2",
+      id: crypto.randomUUID(),
       school: "Example School",
       city: "Cracow, Poland",
       degree: "Bachelor of Science",

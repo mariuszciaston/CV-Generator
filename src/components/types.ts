@@ -9,7 +9,7 @@ export interface DataProps {
   skills: string;
 
   experience: {
-    uuid: string;
+    id: string;
     position: string;
     company: string;
     city: string;
@@ -19,7 +19,7 @@ export interface DataProps {
   }[];
 
   education: {
-    uuid: string;
+    id: string;
     school: string;
     city: string;
     degree: string;
@@ -71,6 +71,10 @@ export interface CardProps extends DataProps, cardDetailsProps {
 
   // onExperienceChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   // onEducationChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+
+  addExperienceForm?: () => void;
+  addEducationForm?: () => void;
+  onRemove?: () => void;
 }
 
 export interface InputFieldProps {
