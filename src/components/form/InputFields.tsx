@@ -2,7 +2,7 @@ import { useState } from "react";
 import InputField from "../common/InputField";
 import Textarea from "../common/Textarea";
 import Button from "../common/Button";
-import { CardProps } from "../types";
+import { CardProps, DataProps } from "../types";
 import cardDetails from "./cardDetails";
 import ExperienceForm from "./ExperienceForm";
 import EducationForm from "./EducationForm";
@@ -61,26 +61,30 @@ const InputFields: React.FC<
   // onEducationChange,
 }) => {
   const [experienceForms, setExperienceForms] = useState([
-    emptyData.experience[0],
+    { ...emptyData.experience[0], id: crypto.randomUUID() },
   ]);
 
   const addExperienceForm = () => {
-    setExperienceForms((prev) => [...prev, emptyData.experience[0]]);
+    setExperienceForms((prev) => [
+      ...prev,
+      { ...emptyData.experience[0], id: crypto.randomUUID() },
+    ]);
   };
-
-  const removeExperienceForm = (id: string) => {
+  const removeExperienceForm = (id: DataProps["experience"][0]["id"]) => {
     setExperienceForms((prev) => prev.filter((form) => form.id !== id));
   };
-
   const [educationForms, setEducationForms] = useState([
-    emptyData.education[0],
+    { ...emptyData.education[0], id: crypto.randomUUID() },
   ]);
 
   const addEducationForm = () => {
-    setEducationForms((prev) => [...prev, emptyData.education[0]]);
+    setEducationForms((prev) => [
+      ...prev,
+      { ...emptyData.education[0], id: crypto.randomUUID() },
+    ]);
   };
 
-  const removeEducationForm = (id: string) => {
+  const removeEducationForm = (id: DataProps["experience"][0]["id"]) => {
     setEducationForms((prev) => prev.filter((form) => form.id !== id));
   };
 
