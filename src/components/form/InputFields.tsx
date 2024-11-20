@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import InputField from "../common/InputField";
 import Textarea from "../common/Textarea";
 import Button from "../common/Button";
@@ -31,8 +31,7 @@ const InputFields: React.FC<
     | "onWebsiteChange"
     | "onSummaryChange"
     | "onSkillsChange"
-    // | "onExperienceChange"
-    // | "onEducationChange"
+    | "onExperienceChange"
     | "addExperienceForm"
     | "addEducationForm"
   >
@@ -47,8 +46,7 @@ const InputFields: React.FC<
   website,
   summary,
   skills,
-  // experience,
-  // education,
+  experience,
   onFullNameChange,
   onJobTitleChange,
   onAddressChange,
@@ -57,12 +55,28 @@ const InputFields: React.FC<
   onWebsiteChange,
   onSummaryChange,
   onSkillsChange,
-  // onExperienceChange,
+  onExperienceChange,
   // onEducationChange,
 }) => {
-  const [experienceForms, setExperienceForms] = useState([
-    { ...emptyData.experience[0], id: crypto.randomUUID() },
-  ]);
+  const [experienceForms, setExperienceForms] = useState(
+    experience.length > 0
+      ? experience
+      : [{ ...emptyData.experience[0], id: crypto.randomUUID() }]
+  );
+
+  useEffect(() => {
+    if (experience.length > 0) {
+      setExperienceForms(experience);
+    }
+  }, [experience]);
+
+  const handleExperienceChange = (id: string, field: string, value: string) => {
+    const updatedForms = experienceForms.map((form) =>
+      form.id === id ? { ...form, [field]: value } : form
+    );
+    setExperienceForms(updatedForms);
+    onExperienceChange({ target: { value: JSON.stringify(updatedForms) } } as any);
+  };
 
   const addExperienceForm = () => {
     setExperienceForms((prev) => [
@@ -165,6 +179,7 @@ const InputFields: React.FC<
               key={form.id}
               form={form}
               onRemove={() => removeExperienceForm(form.id)}
+              onChange={handleExperienceChange}
             />
           ))}
 

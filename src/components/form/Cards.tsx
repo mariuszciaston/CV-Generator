@@ -36,8 +36,7 @@ const Cards: React.FC<InputSectionProps> = ({ data, onDataChange }) => {
           onWebsiteChange={handleFieldChange("website")}
           onSummaryChange={handleFieldChange("summary")}
           onSkillsChange={handleFieldChange("skills")}
-          // onExperienceChange={handleFieldChange("experience")}
-          // onEducationChange={handleFieldChange("education")}
+          onExperienceChange={handleFieldChange("experience")}
         />
       ))}
     </div>

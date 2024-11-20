@@ -26,8 +26,7 @@ const Card: React.FC<CardProps> = ({
   onWebsiteChange,
   onSummaryChange,
   onSkillsChange,
-  // onExperienceChange,
-  // onEducationChange,
+  onExperienceChange,
 }) => {
   return (
     <div className="flex flex-col gap-4 rounded-md border bg-white p-4 shadow">
@@ -59,8 +58,7 @@ const Card: React.FC<CardProps> = ({
         onWebsiteChange={onWebsiteChange}
         onSummaryChange={onSummaryChange}
         onSkillsChange={onSkillsChange}
-        // onExperienceChange={onExperienceChange}
-        // onEducationChange={onEducationChange}
+        onExperienceChange={onExperienceChange}
       />
     </div>
   );

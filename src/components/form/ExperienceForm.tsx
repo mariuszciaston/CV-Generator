@@ -5,7 +5,8 @@ import { DataProps } from "../types";
 const ExperienceForm: React.FC<{
   form: DataProps["experience"][0];
   onRemove: () => void;
-}> = ({ form, onRemove }) => {
+  onChange: (id: string, field: string, value: string) => void;
+}> = ({ form, onRemove, onChange }) => {
   return (
     <div className="flex flex-col gap-4 rounded-md bg-orange-100 p-4">
       <InputField
@@ -14,7 +15,7 @@ const ExperienceForm: React.FC<{
         id="position"
         placeholder="Enter your Role/Job Title"
         value={form.position}
-        // onChange={onPositionChange}
+        onChange={(e) => onChange(form.id, "position", e.target.value)}
       />
       <InputField
         label="Company"
@@ -22,6 +23,7 @@ const ExperienceForm: React.FC<{
         id="company"
         placeholder="Enter company's name"
         value={form.company}
+        onChange={(e) => onChange(form.id, "company", e.target.value)}
       />
       <InputField
         label="City"
@@ -29,6 +31,7 @@ const ExperienceForm: React.FC<{
         id="city"
         placeholder="Enter a city"
         value={form.city}
+        onChange={(e) => onChange(form.id, "city", e.target.value)}
       />
       <InputField
         label="Description"
@@ -36,6 +39,7 @@ const ExperienceForm: React.FC<{
         id="description"
         placeholder="Job responsibility"
         value={form.description}
+        onChange={(e) => onChange(form.id, "description", e.target.value)}
       />
       <InputField
         label="Start Date"
@@ -43,6 +47,7 @@ const ExperienceForm: React.FC<{
         id="startDate"
         placeholder="Enter start date"
         value={form.startDate}
+        onChange={(e) => onChange(form.id, "startDate", e.target.value)}
       />
       <InputField
         label="End Date"
@@ -50,6 +55,7 @@ const ExperienceForm: React.FC<{
         id="endDate"
         placeholder="Enter end date"
         value={form.endDate}
+        onChange={(e) => onChange(form.id, "endDate", e.target.value)}
       />
 
       <Button text="Remove" className="bg-orange-500" onClick={onRemove} />
