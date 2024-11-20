@@ -34,14 +34,6 @@ const ExperienceForm: React.FC<{
         onChange={(e) => onChange(form.id, "city", e.target.value)}
       />
       <InputField
-        label="Description"
-        type="text"
-        id="description"
-        placeholder="Job responsibility"
-        value={form.description}
-        onChange={(e) => onChange(form.id, "description", e.target.value)}
-      />
-      <InputField
         label="Start Date"
         type="text"
         id="startDate"
@@ -56,6 +48,14 @@ const ExperienceForm: React.FC<{
         placeholder="Enter end date"
         value={form.endDate}
         onChange={(e) => onChange(form.id, "endDate", e.target.value)}
+      />
+      <InputField
+        label="Description"
+        type="text"
+        id="description"
+        placeholder="Job responsibility"
+        value={form.description}
+        onChange={(e) => onChange(form.id, "description", e.target.value)}
       />
 
       <Button text="Remove" className="bg-orange-500" onClick={onRemove} />

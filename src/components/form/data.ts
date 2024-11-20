@@ -16,18 +16,18 @@ const emptyData: DataProps = {
       position: "",
       company: "",
       city: "",
-      description: "",
       startDate: "",
       endDate: "",
+      description: "",
     },
   ],
 
   education: [
     {
       id: "",
+      degree: "",
       school: "",
       city: "",
-      degree: "",
       startDate: "",
       endDate: "",
     },
@@ -51,37 +51,37 @@ const exampleData: DataProps = {
       position: "Example Position 1",
       company: "Example Company 1",
       city: "Cracow, Poland",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       startDate: "2020-01-01",
       endDate: "2021-01-01",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
       id: crypto.randomUUID(),
       position: "Example Position 2",
       company: "Example Company 2",
       city: "Cracow, Poland",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       startDate: "2020-01-01",
       endDate: "2021-01-01",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
   ],
 
   education: [
     {
       id: crypto.randomUUID(),
+      degree: "Bachelor of Science",
       school: "Example School",
       city: "Cracow, Poland",
-      degree: "Bachelor of Science",
       startDate: "2020-01-01",
       endDate: "2021-01-01",
     },
     {
       id: crypto.randomUUID(),
+      degree: "Bachelor of Science",
       school: "Example School",
       city: "Cracow, Poland",
-      degree: "Bachelor of Science",
       startDate: "2020-01-01",
       endDate: "2021-01-01",
     },

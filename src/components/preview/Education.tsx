@@ -1,18 +1,41 @@
-// import { DataProps } from "../types";
+import { DataProps } from "../types";
 
-// const Education: React.FC<Pick<DataProps, "education">> = ({ education }) => {
-//   return (
-//     <div id="education">
-//       <h2 className="font-semibold text-blue-500">EDUCATION</h2>
-//       <p>
-//         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-//         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-//         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-//         commodo consequat.
-//       </p>
-//       <br />
-//     </div>
-//   );
-// };
+const Education: React.FC<Pick<DataProps, "education">> = ({ education }) => {
+  const hasExperience = education.some(
+    (item) =>
+      item.degree || item.school || item.city || item.startDate || item.endDate,
+  );
 
-// export default Education;
+  return (
+    <>
+      {hasExperience && (
+        <div id="education">
+          <h2 className="font-semibold text-blue-500">EDUCATION</h2>
+          {education.map((item) => (
+            <div key={item.id}>
+              {item.school && <h3 className="font-semibold">{item.degree}</h3>}
+
+              <div className="flex justify-between">
+                <div>
+                  {item.school}
+                  {item.school && item.city && " | "}
+                  {item.city}
+                </div>
+
+                <div>
+                  {item.startDate}
+                  {item.endDate ? " - " : ""}
+                  {item.endDate}
+                </div>
+              </div>
+
+              <br />
+            </div>
+          ))}
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Education;

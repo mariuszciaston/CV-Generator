@@ -3,8 +3,8 @@ import { DataProps } from "../types";
 
 import PersonalInfo from "./PersonalInfo";
 import Summary from "./Summary";
-// import Experience from "./Experience";
-// import Education from "./Education";
+import Experience from "./Experience";
+import Education from "./Education";
 import Skills from "./Skills";
 
 const PreviewSection = forwardRef<HTMLDivElement, DataProps>(
@@ -18,6 +18,8 @@ const PreviewSection = forwardRef<HTMLDivElement, DataProps>(
       website,
       summary,
       skills,
+      experience,
+      education,
     },
     ref,
   ) => {
@@ -42,9 +44,9 @@ const PreviewSection = forwardRef<HTMLDivElement, DataProps>(
 
           <Summary summary={summary} />
 
-          {/* <Experience experience={experience} />
+          <Experience experience={experience} />
 
-          <Education education={education} /> */}
+          <Education education={education} />
 
           <Skills skills={skills} />
         </div>

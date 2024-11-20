@@ -13,16 +13,16 @@ export interface DataProps {
     position: string;
     company: string;
     city: string;
-    description: string;
     startDate: string;
     endDate: string;
+    description: string;
   }[];
 
   education: {
     id: string;
+    degree: string;
     school: string;
     city: string;
-    degree: string;
     startDate: string;
     endDate: string;
   }[];
