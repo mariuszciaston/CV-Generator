@@ -31,7 +31,7 @@ const PreviewSection = forwardRef<HTMLDivElement, DataProps>(
         <div
           id="page"
           ref={ref}
-          className="flex aspect-[210/297] flex-col break-words border bg-white p-[calc(100%/21)] shadow-lg"
+          className="flex aspect-[210/297] flex-col break-words border bg-white p-[calc(100%/21*2)] shadow-lg"
         >
           <PersonalInfo
             fullName={fullName}

@@ -26,7 +26,7 @@ const emptyData: DataProps = {
     {
       id: "",
       degree: "",
-      school: "",
+      university: "",
       city: "",
       startDate: "",
       endDate: "",
@@ -42,48 +42,59 @@ const exampleData: DataProps = {
   email: "john.doe@example.com",
   website: "www.example.com",
   summary:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  skills: "React / Typescript / Tailwind",
+    "Passionate software developer with 5 years of experience in designing and developing web applications. Proficient in Typescript, React, and Node.js.",
+  skills:
+    "JavaScript / Typescript / React / Tailwind / Node.js / HTML / CSS / PostgreSQL",
 
   experience: [
     {
       id: crypto.randomUUID(),
-      position: "Example Position 1",
+      position: "Senior Software Developer",
       company: "Example Company 1",
-      city: "Cracow, Poland",
-      startDate: "2020-01-01",
-      endDate: "2021-01-01",
+      city: "Warsaw, Poland",
+      startDate: "2022",
+      endDate: "present",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Lead a team of developers to create scalable web applications, improve code quality, and implement new features based on user feedback.",
     },
     {
       id: crypto.randomUUID(),
-      position: "Example Position 2",
+      position: "Software Developer",
       company: "Example Company 2",
-      city: "Cracow, Poland",
-      startDate: "2020-01-01",
-      endDate: "2021-01-01",
+      city: "Wrocław, Poland",
+      startDate: "2020",
+      endDate: "2022",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Developed and maintained web applications using React and Node.js. Collaborated with cross-functional teams to enhance product functionality.",
+    },
+    {
+      id: crypto.randomUUID(),
+      position: "Junior Software Developer",
+      company: "Example Company 3",
+      city: "Poznań, Poland",
+      startDate: "2018",
+      endDate: "2020",
+      description:
+        "Implemented front-end and back-end solutions for various clients. Ensured high performance and responsiveness of applications.",
     },
   ],
 
   education: [
     {
       id: crypto.randomUUID(),
-      degree: "Bachelor of Science",
-      school: "Example School",
+      degree: "Master's in Computer Engineering",
+      university: "Example University",
       city: "Cracow, Poland",
-      startDate: "2020-01-01",
-      endDate: "2021-01-01",
+      startDate: "2016",
+      endDate: "2018",
     },
     {
       id: crypto.randomUUID(),
-      degree: "Bachelor of Science",
-      school: "Example School",
+      degree: "Bachelor's in Computer Science",
+      university: "Example University",
       city: "Cracow, Poland",
-      startDate: "2020-01-01",
-      endDate: "2021-01-01",
+      startDate: "2013",
+      endDate: "2016",
     },
   ],
 };

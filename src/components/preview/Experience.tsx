@@ -24,7 +24,7 @@ const Experience: React.FC<Pick<DataProps, "experience">> = ({
                 <h3 className="font-semibold">{item.position}</h3>
               )}
 
-              <div className="flex justify-between">
+              <div className="flex flex-wrap justify-between">
                 <div>
                   {item.company}
                   {item.company && item.city && " | "}

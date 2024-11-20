@@ -10,12 +10,12 @@ const EducationForm: React.FC<{
   return (
     <div className="flex flex-col gap-4 rounded-md bg-orange-100 p-4">
       <InputField
-        label="School/University"
+        label="University"
         type="text"
-        id="school"
-        placeholder="Enter School/University"
-        value={form.school}
-        onChange={(e) => onChange(form.id, "school", e.target.value)}
+        id="university"
+        placeholder="Enter University"
+        value={form.university}
+        onChange={(e) => onChange(form.id, "university", e.target.value)}
       />
       <InputField
         label="City"

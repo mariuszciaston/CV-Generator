@@ -21,7 +21,7 @@ export interface DataProps {
   education: {
     id: string;
     degree: string;
-    school: string;
+    university: string;
     city: string;
     startDate: string;
     endDate: string;
