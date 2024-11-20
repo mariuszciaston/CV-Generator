@@ -70,7 +70,7 @@ export interface CardProps extends DataProps, cardDetailsProps {
   onSkillsChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 
   onExperienceChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-
+  onEducationChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   addExperienceForm?: () => void;
   addEducationForm?: () => void;
   onRemove?: () => void;

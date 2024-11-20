@@ -5,7 +5,8 @@ import { DataProps } from "../types";
 const EducationForm: React.FC<{
   form: DataProps["education"][0];
   onRemove: () => void;
-}> = ({ form, onRemove }) => {
+  onChange: (id: string, field: string, value: string) => void;
+}> = ({ form, onRemove, onChange }) => {
   return (
     <div className="flex flex-col gap-4 rounded-md bg-orange-100 p-4">
       <InputField
@@ -14,6 +15,7 @@ const EducationForm: React.FC<{
         id="school"
         placeholder="Enter School/University"
         value={form.school}
+        onChange={(e) => onChange(form.id, "school", e.target.value)}
       />
       <InputField
         label="City"
@@ -21,6 +23,7 @@ const EducationForm: React.FC<{
         id="city"
         placeholder="Enter a city"
         value={form.city}
+        onChange={(e) => onChange(form.id, "city", e.target.value)}
       />
       <InputField
         label="Degree"
@@ -28,6 +31,7 @@ const EducationForm: React.FC<{
         id="degree"
         placeholder="Enter Degree"
         value={form.degree}
+        onChange={(e) => onChange(form.id, "degree", e.target.value)}
       />
 
       <InputField
@@ -36,6 +40,7 @@ const EducationForm: React.FC<{
         id="startDate"
         placeholder="Enter start date"
         value={form.startDate}
+        onChange={(e) => onChange(form.id, "startDate", e.target.value)}
       />
       <InputField
         label="End Date"
@@ -43,6 +48,7 @@ const EducationForm: React.FC<{
         id="endDate"
         placeholder="Enter end date"
         value={form.endDate}
+        onChange={(e) => onChange(form.id, "endDate", e.target.value)}
       />
 
       <Button text="Remove" className="bg-orange-500" onClick={onRemove} />
