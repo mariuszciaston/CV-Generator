@@ -1,4 +1,5 @@
 import InputField from "../common/InputField";
+import Textarea from "../common/Textarea";
 import Button from "../common/Button";
 import { DataProps } from "../types";
 
@@ -49,14 +50,20 @@ const ExperienceForm: React.FC<{
         value={form.endDate}
         onChange={(e) => onChange(form.id, "endDate", e.target.value)}
       />
-      <InputField
-        label="Description"
-        type="text"
-        id="description"
-        placeholder="Job responsibility"
-        value={form.description}
-        onChange={(e) => onChange(form.id, "description", e.target.value)}
-      />
+
+      <div className="flex flex-col gap-2">
+        <label className="text-sm font-semibold" htmlFor="description">
+          Description
+        </label>
+
+        <Textarea
+          name="Description"
+          id="description"
+          placeholder="Job responsibility"
+          value={form.description}
+          onChange={(e) => onChange(form.id, "description", e.target.value)}
+        />
+      </div>
 
       <Button text="Remove" className="bg-orange-500" onClick={onRemove} />
     </div>
