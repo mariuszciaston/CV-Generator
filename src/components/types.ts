@@ -41,6 +41,10 @@ export interface InputSectionProps {
   saveAsPdf?: () => void;
 }
 
+export type InputChangeEvent = React.ChangeEvent<
+  HTMLInputElement | HTMLTextAreaElement
+>;
+
 export interface ButtonProps {
   text: string;
   className: string;
