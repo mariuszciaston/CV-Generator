@@ -34,33 +34,16 @@ export const useForms = ({
     if (experience.length > 0) {
       setExperienceForms(experience);
     }
-  }, [experience]);
 
-  useEffect(() => {
     if (education.length > 0) {
       setEducationForms(education);
     }
-  }, [education]);
+  }, [experience, education]);
 
   const handleExperienceChange = (id: string, field: string, value: string) => {
     const updatedForms = experienceForms.map((form) =>
       form.id === id ? { ...form, [field]: value } : form,
     );
-    setExperienceForms(updatedForms);
-    onExperienceChange({
-      target: { value: JSON.stringify(updatedForms) },
-    } as React.ChangeEvent<HTMLInputElement>);
-  };
-
-  const addExperienceForm = () => {
-    setExperienceForms((prev) => [
-      ...prev,
-      { ...emptyData.experience[0], id: crypto.randomUUID() },
-    ]);
-  };
-
-  const removeExperienceForm = (id: DataProps["experience"][0]["id"]) => {
-    const updatedForms = experienceForms.filter((form) => form.id !== id);
     setExperienceForms(updatedForms);
     onExperienceChange({
       target: { value: JSON.stringify(updatedForms) },
@@ -77,11 +60,26 @@ export const useForms = ({
     } as React.ChangeEvent<HTMLInputElement>);
   };
 
+  const addExperienceForm = () => {
+    setExperienceForms((prev) => [
+      ...prev,
+      { ...emptyData.experience[0], id: crypto.randomUUID() },
+    ]);
+  };
+
   const addEducationForm = () => {
     setEducationForms((prev) => [
       ...prev,
       { ...emptyData.education[0], id: crypto.randomUUID() },
     ]);
+  };
+
+  const removeExperienceForm = (id: DataProps["experience"][0]["id"]) => {
+    const updatedForms = experienceForms.filter((form) => form.id !== id);
+    setExperienceForms(updatedForms);
+    onExperienceChange({
+      target: { value: JSON.stringify(updatedForms) },
+    } as React.ChangeEvent<HTMLInputElement>);
   };
 
   const removeEducationForm = (id: DataProps["education"][0]["id"]) => {

@@ -32,8 +32,6 @@ const InputFields: React.FC<
     | "onSkillsChange"
     | "onExperienceChange"
     | "onEducationChange"
-    // | "addExperienceForm"
-    // | "addEducationForm"
   >
 > = ({
   isOpen,
