@@ -89,7 +89,11 @@ const InputFields: React.FC<
     ]);
   };
   const removeExperienceForm = (id: DataProps["experience"][0]["id"]) => {
-    setExperienceForms((prev) => prev.filter((form) => form.id !== id));
+    const updatedForms = experienceForms.filter((form) => form.id !== id);
+    setExperienceForms(updatedForms);
+    onExperienceChange({
+      target: { value: JSON.stringify(updatedForms) },
+    } as any);
   };
 
   const [educationForms, setEducationForms] = useState(
@@ -121,7 +125,11 @@ const InputFields: React.FC<
     ]);
   };
   const removeEducationForm = (id: DataProps["education"][0]["id"]) => {
-    setEducationForms((prev) => prev.filter((form) => form.id !== id));
+    const updatedForms = educationForms.filter((form) => form.id !== id);
+    setEducationForms(updatedForms);
+    onEducationChange({
+      target: { value: JSON.stringify(updatedForms) },
+    } as any);
   };
 
   if (!isOpen) {
