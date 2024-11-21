@@ -3,7 +3,7 @@ import { InputSectionProps, InputChangeEvent } from "../types";
 import cardDetails from "../form/cardDetails";
 
 const useCards = ({ data, onDataChange }: InputSectionProps) => {
-  const [openCard, setOpenCard] = useState<string | null>(cardDetails[2].title);
+  const [openCard, setOpenCard] = useState<string | null>(cardDetails[0].title);
 
   const handleToggle = (title: string) => {
     setOpenCard((prev) => (prev === title ? null : title));
