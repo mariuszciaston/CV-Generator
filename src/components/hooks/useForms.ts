@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { CardProps, DataProps } from "../types";
 import { emptyData } from "../form/data";
+import { v4 as uuidv4 } from "uuid";
 
 export const useForms = ({
   experience,
@@ -21,13 +22,13 @@ export const useForms = ({
   const [experienceForms, setExperienceForms] = useState(
     experience.length > 0
       ? experience
-      : [{ ...emptyData.experience[0], id: crypto.randomUUID() }],
+      : [{ ...emptyData.experience[0], id: uuidv4() }],
   );
 
   const [educationForms, setEducationForms] = useState(
     education.length > 0
       ? education
-      : [{ ...emptyData.education[0], id: crypto.randomUUID() }],
+      : [{ ...emptyData.education[0], id: uuidv4() }],
   );
 
   useEffect(() => {
@@ -63,14 +64,14 @@ export const useForms = ({
   const addExperienceForm = () => {
     setExperienceForms((prev) => [
       ...prev,
-      { ...emptyData.experience[0], id: crypto.randomUUID() },
+      { ...emptyData.experience[0], id: uuidv4() },
     ]);
   };
 
   const addEducationForm = () => {
     setEducationForms((prev) => [
       ...prev,
-      { ...emptyData.education[0], id: crypto.randomUUID() },
+      { ...emptyData.education[0], id: uuidv4() },
     ]);
   };
 

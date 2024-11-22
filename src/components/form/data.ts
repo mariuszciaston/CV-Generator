@@ -1,4 +1,5 @@
 import { DataProps } from "../types";
+import { v4 as uuidv4 } from "uuid";
 
 const emptyData: DataProps = {
   fullName: "",
@@ -48,7 +49,7 @@ const exampleData: DataProps = {
 
   experience: [
     {
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       position: "Senior Software Developer",
       company: "Example Company 1",
       city: "Warsaw, Poland",
@@ -58,7 +59,7 @@ const exampleData: DataProps = {
         "Lead a team of developers to create scalable web applications, improve code quality, and implement new features based on user feedback.",
     },
     {
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       position: "Software Developer",
       company: "Example Company 2",
       city: "Wrocław, Poland",
@@ -68,7 +69,7 @@ const exampleData: DataProps = {
         "Developed and maintained web applications using React and Node.js. Collaborated with cross-functional teams to enhance product functionality.",
     },
     {
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       position: "Junior Software Developer",
       company: "Example Company 3",
       city: "Poznań, Poland",
@@ -81,7 +82,7 @@ const exampleData: DataProps = {
 
   education: [
     {
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       degree: "Master's in Computer Engineering",
       university: "Example University",
       city: "Cracow, Poland",
@@ -89,7 +90,7 @@ const exampleData: DataProps = {
       endDate: "2018",
     },
     {
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       degree: "Bachelor's in Computer Science",
       university: "Example University",
       city: "Cracow, Poland",
