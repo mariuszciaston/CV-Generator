@@ -10,6 +10,14 @@ const EducationForm: React.FC<{
   return (
     <div className="flex flex-col gap-4 rounded-md bg-orange-100 p-4">
       <InputField
+        label="Degree"
+        type="text"
+        id="degree"
+        placeholder="Enter Degree"
+        value={form.degree}
+        onChange={(e) => onChange(form.id, "degree", e.target.value)}
+      />
+      <InputField
         label="University"
         type="text"
         id="university"
@@ -24,14 +32,6 @@ const EducationForm: React.FC<{
         placeholder="Enter a city"
         value={form.city}
         onChange={(e) => onChange(form.id, "city", e.target.value)}
-      />
-      <InputField
-        label="Degree"
-        type="text"
-        id="degree"
-        placeholder="Enter Degree"
-        value={form.degree}
-        onChange={(e) => onChange(form.id, "degree", e.target.value)}
       />
 
       <InputField
