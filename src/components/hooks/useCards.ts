@@ -11,14 +11,10 @@ const useCards = ({ data, onDataChange }: InputSectionProps) => {
 
   const handleFieldChange =
     (field: keyof typeof data) => (e: InputChangeEvent) => {
-      if (field === "experience" || field === "education") {
-        try {
-          const parsedValue = JSON.parse(e.target.value);
-          onDataChange(field, parsedValue);
-        } catch {
-          onDataChange(field, e.target.value);
-        }
-      } else {
+      try {
+        const parsedValue = JSON.parse(e.target.value);
+        onDataChange(field, parsedValue);
+      } catch {
         onDataChange(field, e.target.value);
       }
     };
