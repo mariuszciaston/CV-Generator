@@ -18,16 +18,7 @@ const Cards: React.FC<InputSectionProps> = ({ data, onDataChange }) => {
           Icon={Icon}
           isOpen={openCard === title}
           onToggle={handleToggle}
-          fullName={data.fullName}
-          jobTitle={data.jobTitle}
-          address={data.address}
-          phoneNumber={data.phoneNumber}
-          email={data.email}
-          website={data.website}
-          summary={data.summary}
-          skills={data.skills}
-          experience={data.experience}
-          education={data.education}
+          {...data}
           onFullNameChange={handleFieldChange("fullName")}
           onJobTitleChange={handleFieldChange("jobTitle")}
           onAddressChange={handleFieldChange("address")}
