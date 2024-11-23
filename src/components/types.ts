@@ -33,6 +33,14 @@ export type HandleDataChangeProps = (
   value: string,
 ) => void;
 
+export type OnChangeProps = (
+  id: string,
+  field:
+    | keyof DataProps["education"][number]
+    | keyof DataProps["experience"][number],
+  value: string,
+) => void;
+
 export interface InputSectionProps {
   data: DataProps;
   onDataChange: HandleDataChangeProps;
