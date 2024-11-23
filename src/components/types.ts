@@ -29,7 +29,10 @@ export interface DataProps {
 }
 
 export type HandleDataChangeProps = (
-  field: keyof DataProps,
+  id: string,
+  field:
+    | keyof DataProps["education"][number]
+    | keyof DataProps["experience"][number],
   value: string,
 ) => void;
 
