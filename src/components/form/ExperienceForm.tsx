@@ -1,12 +1,12 @@
 import InputField from "../common/InputField";
 import Textarea from "../common/Textarea";
 import Button from "../common/Button";
-import { DataProps } from "../types";
+import { CardProps, DataProps, HandleDataChangeProps } from "../types";
 
 const ExperienceForm: React.FC<{
   form: DataProps["experience"][0];
-  onRemove: () => void;
-  onChange: (id: string, field: string, value: string) => void;
+  onRemove: CardProps["onRemove"];
+  onChange: HandleDataChangeProps;
 }> = ({ form, onRemove, onChange }) => {
   return (
     <div className="flex flex-col gap-4 rounded-md bg-orange-100 p-4">
