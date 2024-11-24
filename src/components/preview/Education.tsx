@@ -17,9 +17,7 @@ const Education: React.FC<Pick<DataProps, "education">> = ({ education }) => {
           <h2 className="font-semibold text-blue-500">EDUCATION</h2>
           {education.map((item) => (
             <div key={item.id}>
-              {item.university && (
-                <h3 className="font-semibold">{item.degree}</h3>
-              )}
+              {item.degree && <h3 className="font-semibold">{item.degree}</h3>}
 
               <div className="flex flex-wrap justify-between">
                 <div>
