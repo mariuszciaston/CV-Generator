@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { CardProps, DataProps } from "../types";
 import { emptyData } from "../form/data";
 import { v4 as uuidv4 } from "uuid";
@@ -31,15 +31,13 @@ export const useForms = ({
       : [{ ...emptyData.education[0], id: uuidv4() }],
   );
 
-  useEffect(() => {
-    if (experience.length > 0) {
-      setExperienceForms(experience);
-    }
+  if (JSON.stringify(experience) !== JSON.stringify(experienceForms)) {
+    setExperienceForms(experience);
+  }
 
-    if (education.length > 0) {
-      setEducationForms(education);
-    }
-  }, [experience, education]);
+  if (JSON.stringify(education) !== JSON.stringify(educationForms)) {
+    setEducationForms(education);
+  }
 
   const handleExperienceChange = (id: string, field: string, value: string) => {
     const updatedForms = experienceForms.map((form) =>
@@ -62,17 +60,25 @@ export const useForms = ({
   };
 
   const addExperienceForm = () => {
-    setExperienceForms((prev) => [
-      ...prev,
+    const updatedForms = [
+      ...experienceForms,
       { ...emptyData.experience[0], id: uuidv4() },
-    ]);
+    ];
+    setExperienceForms(updatedForms);
+    onExperienceChange({
+      target: { value: JSON.stringify(updatedForms) },
+    } as React.ChangeEvent<HTMLInputElement>);
   };
 
   const addEducationForm = () => {
-    setEducationForms((prev) => [
-      ...prev,
+    const updatedForms = [
+      ...educationForms,
       { ...emptyData.education[0], id: uuidv4() },
-    ]);
+    ];
+    setEducationForms(updatedForms);
+    onEducationChange({
+      target: { value: JSON.stringify(updatedForms) },
+    } as React.ChangeEvent<HTMLInputElement>);
   };
 
   const removeExperienceForm = (id: DataProps["experience"][0]["id"]) => {
