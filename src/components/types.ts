@@ -95,7 +95,6 @@ export interface InputFieldProps {
 
 export interface ChevronBtnProps {
   isOpen: boolean;
-  onToggle: () => void;
 }
 
 export interface TextareaProps {

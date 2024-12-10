@@ -31,13 +31,17 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className="flex flex-col gap-4 rounded-md border bg-white p-4 shadow">
-      <div className="flex items-center justify-between text-xl font-semibold">
+      <div
+        className="flex items-center justify-between text-xl font-semibold hover:cursor-pointer"
+        onClick={() => onToggle(title)}
+      >
         <div className="flex items-center gap-2">
           {Icon && <Icon />}
           <div>{title}</div>
         </div>
-        <ChevronBtn isOpen={isOpen} onToggle={() => onToggle(title)} />
+        <ChevronBtn isOpen={isOpen} />
       </div>
+
       <InputFields
         isOpen={isOpen}
         title={title}
